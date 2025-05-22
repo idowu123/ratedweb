@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<heading>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Music Rating Site</title>
+</heading>
+<style>
+  body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      padding: 20px;
+      background-image: url(trainer-bg.jpg);
+      background-size: cover;
+      background-position:center ;
+      color:white;
+    }
+  .terms-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 30px;
+      font-family: Arial, sans-serif;
+  }
+
+  .agreement-section {
+      margin: 40px 0;
+      padding: 20px;
+      border: 1px solid #ddd;
+  }
+
+  .radio-group {
+      margin: 20px 0;
+  }
+
+  .radio-input {
+      display: none;
+  }
+
+  .radio-label {
+      position: relative;
+      padding-left: 35px;
+      cursor: pointer;
+      display: block;
+      margin: 15px 0;
+  }
+
+  .radio-label:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #666;
+      border-radius: 50%;
+  }
+
+  .radio-input:checked + .radio-label:before {
+      border-color: #2ecc71;
+  }
+
+  .radio-input:checked + .radio-label:after {
+      content: "";
+      position: absolute;
+      left: 5px;
+      top: 5px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #2ecc71;
+  }
+
+  .submit-btn {
+      background: #2ecc71;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+  }
+
+  .submit-btn {
+      background: #95a5a6;
+      cursor: not-allowed;
+      color:white;
+  }
+  .submit-btn a{
+    color:white;
+  }
+  .submit-btn a:hover{
+    color: yellow;
+  }
+  h1{
+    font-size: 20px;
+  }
+
+  h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 8px;
+    margin-top: 40px;
+}
+
+ul, ol {
+    margin: 15px 0;
+    padding-left: 30px;
+}
+
+li {
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+em {
+    color: #e74c3c;
+    font-style: normal;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+</style>
+</head>
+<body>
+<div class="terms-container">
+<h1>Terms & Conditions</h1>
+
+<h1>1. License Agreement</h1>
+<p>By accessing Next Rated Artist website under Noble Studio (located in Lagos, Nigeria), you agree to a non-exclusive, non-transferable license to use our musical content for personal, non-commercial purposes. All intellectual property rights remain vested in Noble Studio and its licensors.</p>
+
+<h1>2. Anti-Piracy Clause</h1>
+<p>Users are strictly prohibited from:
+<ul>
+  <li>Reverse-engineering any website components</li>
+  <li>Distributing content through unauthorized channels</li>
+  <li>Creating derivative works without express written consent</li>
+</ul>
+Violations will result in immediate termination of access and legal action under Nigerian Copyright Act.</p>
+
+<h1>3. Privacy & Data Protection</h1>
+<p>We collect only necessary personal data under Nigeria's NDPR regulations. User information will never be sold to third parties. By using this service, you consent to our cookie policy and data retention practices.</p>
+
+<h1>4. Mobile Device Permissions</h1>
+<p>When accessing Noble Studio via mobile devices, users grant permission for:
+<ul>
+  <li>Storage access for offline listening</li>
+  <li>Network connectivity for streaming</li>
+  <li>Background audio playback</li>
+</ul>
+These permissions can be revoked through your device settings at any time.</p>
+
+<h2>5. Payment Terms (Premium Services)</h2>
+    <p>For premium subscriptions:
+    <ul>
+        <li>All payments processed in Nigerian Naira (₦) </li>
+        
+        <li>Price changes communicated 30 days in advance via registered email</li>
+    </ul>
+    <em>Complies with Central Bank of Nigeria's Guidelines on International Mobile Money Remittance Service (2020)</em></p>
+
+    <h2>6. Refund Policy</h2>
+    <p>Users may request refunds within:
+    <ul>
+        <li>7 days for digital content not yet accessed</li>
+        <li>48 hours for failed transactions (provide GTBank/UBA transaction ID)</li>
+    </ul>
+    No refunds for:
+    <ul>
+        <li>Partial month usage of subscriptions</li>
+       
+    </ul></p>
+
+    <h2>7. Age Restrictions</h2>
+    <p>In compliance with Nigeria's Child Rights Act (2003):
+    <ul>
+        <li>Minimum age: 18 years can access this website</li>
+        
+        <li>Parental consent required for minors through <a href="mailto:@noblestudio.com.ng@gmail.com">noblestudio.com.ng@gmail.com</a></li>
+    </ul></p>
+
+    <h2>8. Content Moderation</h2>
+    <p>Users agree not to upload/share:
+    <ul>
+        <li>Content violating Nigerian Broadcasting Code (6th Edition)</li>
+        <li>Unauthorized religious/political materials</li>
+        <li>NSFW (Not Safe For Work) content</li>
+    </ul>
+    Reporting procedure: Flag content → 24-hour review → NCC-compliant action</p>
+
+   
+    
+
+    <h2>9. Account Termination</h2>
+    <p>Noble Studio may terminate accounts for:
+    <ul>
+        <li>180 days of inactivity</li>
+        <li>Chargeback abuse (3+ instances)</li>
+        <li>Violation of Copyright Society of Nigeria (COSON) regulations</li>
+    </ul>
+    Notice period: 14 days via SMS + email</p>
+
+
+
+<div class="agreement-section">
+  <h1>User Agreement</h1>
+  <form id="termsForm">
+      <div class="radio-group">
+          <input type="radio" name="agreement" id="agree" class="radio-input" required>
+          <label for="agree" class="radio-label">
+              I hereby accept all terms and conditions outlined above, and confirm that I have read
+              Noble Studio's Privacy Policy (Last Updated: [Insert Date])
+          </label>
+      </div>
+     <button type="submit" class="submit-btn"> <a href="index.html">Submit Agreement</a></button>
+  </form>
+</div>
+
+<p><strong>Governing Law:</strong> This agreement shall be governed by the laws of the Federal Republic of Nigeria.</p>
+</div>
+
+<script>
+const radioInput = document.getElementById('agree');
+const submitButton = document.querySelector('.submit-btn');
+
+radioInput.addEventListener('change', function() {
+  submitButton.disabled = !this.checked;
+});
+</script>
+</body>
+</html>
+    

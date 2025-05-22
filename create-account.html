@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Music Rating Site</title>
+</head>
+  <style>
+input{
+    background-color: whitesmoke;
+    color:rgb(31, 4, 95);
+    margin-top: 10px;
+    padding-lef: 190px;
+    margin-left: 10px;
+    border-radius: 5px;
+    box-shadow: 2 3px;
+    border-color: white;
+    width: 250px;
+    height:20px
+}
+body{
+    background-image: url(client-bg.jpg);
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: cover;
+    color:white;
+}
+.container{
+    background-color: rgba(2, 4, 27, 0.527);
+    height:300px;
+    border-radius: 10px;
+    border-colo: white;
+    border: 2px solid #ccc;
+    box-shadow:0 0 15px #000;
+    width:300px;
+    animation-name: slideIntop;
+    animation-delay: 0;
+    animation-timing-function: ease-out;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+a{
+    text-decoration: none;
+    color:rgb(229, 229, 236);
+}
+button{
+background-color: rgba(199, 15, 15, 0.932);
+border:none;
+height: 25px;
+border-radius: 5px;
+}
+button:hover{
+    transform: scale(1.06);
+        transform: ease in ease out;
+}
+@keyframes slideInleft{
+          from{
+          transform: translateX(-300px);
+          }
+          to{
+          transform:translateX(0);
+          }  
+        } 
+@keyframes slideIntop{
+    from{
+        transform:translateY(300px)
+    }
+    to{
+        transform:translateY(0)
+    }
+}
+ h1{
+    animation-name: slideInleft;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-delay: 0s;
+    
+ }
+
+ .back-home{
+    animation-name: slideIntop;
+    animation-delay: 0;
+    animation-timing-function: ease-out;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+  }
+  .short-p{
+    animation-name: slideIntop;
+    animation-delay: 0;
+    animation-timing-function: ease-out;
+    animation-duration:2s;
+    animation-iteration-count: 1; 
+  }
+  .image{
+    animation-name: slideIntop;
+    animation-delay: 0;
+    animation-timing-function: ease-out;
+    animation-duration:2s;
+    animation-iteration-count: 1;  
+  }
+  .about-page{
+    animation-name: slideIntop;
+    animation-delay: 0;
+    animation-timing-function: ease-out;
+    animation-duration:2s;
+    animation-iteration-count: 1;
+  }
+  .copyright{
+    animation-name: slideIntop;
+    animation-delay: 0;
+    animation-timing-function: ease-out;
+    animation-duration:2s;
+    animation-iteration-count: 1; 
+  }
+  .icon-links:hover{
+    transform:scale(1.2);
+    transform:ease in ease out;
+  }
+  .tagline{
+         animation-name:slideIntop;
+         animation-duration: 3s;
+         animation-timing-function: ease in ease out;
+         animation-delay: os;
+        }
+  .tagline a{
+         color:rgba(255, 255, 255, 0.39);
+        }
+        .tagline a:hover{
+          color:aqua;
+          transform:scale(1.6);
+          transform:ease in out ease out;
+        }
+ 
+    </style>
+    <body>
+       <center> <h1>CREATE ACCOUNT </h1></center>
+       <center>
+        <div class="container">
+            <form>
+                <input type="text" id="username"  name="username" placeholder=User-Name><br><br>
+                <input type="text" id="telephone" name="telephone" placeholder="Phone Number"><br><br>
+                <input type="password" placeholder= create-password  id="password">
+               <center> <p>Password must have combination of letter, <br>number and symbol</p></form></center>
+               <div clas="button">
+               <center> <button> <a href="create-account.html">Create User Account</a></button> | <button> <a href="terms&condition.html">Create Artist Account</a></button></center>
+               <p class="icon-links"><a href="youtube.html"><img src="youtube.png" width="20px" height="20px"></a>   <a href="fb.html"><img src="fb.png" width="20px" height="20px"></a></p>
+            </div> 
+            </form>
+        </div>
+    </center><br>
+    <center> <button class="back-home"> <a href="index.html">Back To Home  <img src="home.png" width="15px"></a></button>  </center>
+    <center> <p class="short-p">Make Your Sound Go Viral</p><p class="image"><img src="netrated logo.png" width="75px"></p></center>
+    
+    <p class="about-page">We are dynamic music promoter, as a artist create a niche for your self 
+        in the music industry by show casing your music, we help you promote your music through
+        our platform. as an artist you have a proffeswsional dashboard wiht us where people can be able
+        to see and downloads your music, on this platforms also, user can rate you,
+        base on your musical know how. etc.
+       </p>
+       <center><p class="copyright"><img src="copyright.png" width="13px"> Noble Studio 2025, All Right Reserved.</p></center>
+       <center> <p class="tagline">Web Develop By <a href="https://noblestudio.netlify.com">Noble Studio Nigeria</a></p></center>
+    </body>
+        </html>
+    

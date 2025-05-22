@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Music Rating Site</title>
+</head>
+<body>
+  <p>Playlist By Nigria Genre</p>
+  <button class="nigeria-gospel-button"><a href="nigeriagospelfilter.html">Gospel</a></button> <button class="nigeria-hiphop-button"><a href="nigeriahiphopfilter.html">Hip-hop</a></button>  <button class="nigeria-rnb-button"><a href="nigeriarnbfilter.html">RnB</a></button> <button class="nigeria-afro-button"><a href="nigeriaafrofilter.html">Afro beat</a></button>
+
+  <h1><marquee> Music Playlist</marquee></h1>
+
+  <div id="music-player" style="display: none;"  style="overflow-y:scroll;height:50px"  >
+    <div id="now-playing">Now Playing: <span id="current-track-title"></span></div>
+    <audio id="audio-player" controls></audio>
+    <div class="controls">
+      <button onclick="playPrevious()">Prev</button>
+      <button onclick="togglePlay()">Play</button>
+      <button onclick="playNext()">Next</button>
+    </div>
+  </div>
+  <br>
+ <center> <button onclick="togglePlaylist()">Click To Show Playlist</button></center>
+  
+  <div id="playlist" style="display: none;">
+    <ul id="track-list"  style="overflow-y:scroll;height:200px">
+      <!-- Tracks will be added here -->
+     
+    </ul>
+  </div><br><br>
+
+
+
+<br>
+
+<marquee><a href=""><img src="slider1.jpg"  width="300px">||   </a> <img src="slider2.jpg" width="300px">     <img src="slider3.jpg" width="300px"></marquee>
+<button class="playlistbycountry"><a href="musicplaylist.html">Back To Playlist</a></button>
+
+<a href="index.html">Back To Homepage</a>
+
+
+
+  <style>
+    .playlistbycountry{
+      background-color: red;
+      border:none;
+      color:white;
+    }
+
+.nigeria-gospel-button{
+    background-color: green;
+    color:white;
+    border:none;
+    border-radius: 5px;
+  }
+  .nigeria-gospel-button:hover{
+    background-color: rgb(133, 15, 201);
+    color:#edf3ed;
+  }
+
+  .nigeria-hiphop-button{
+    background-color: rgb(216, 16, 16);
+    color:white;
+    border:none;
+    border-radius: 5px;
+  }
+  .nigeria-hiphop-button:hover{
+    background-color: rgb(73, 6, 112);
+    color:#edf3ed;
+  }
+
+  .nigeria-rnb-button{
+    background-color: rgb(55, 4, 138);
+    color:white;
+    border:none;
+    border-radius: 5px;
+  }
+  .nigeria-rnb-button:hover{
+    background-color: rgb(158, 5, 5);
+    color:#edf3ed;
+  }
+
+  .nigeria-afro-button{
+    background-color: rgb(15, 194, 201);
+    color:white;
+    border:none;
+    border-radius: 5px;
+  }
+  .nigeria-afro-button:hover{
+    background-color: #f1efef;
+    color:#edf3ed;
+  }
+
+
+  p{
+    color:white;
+  }
+
+    a {
+    color:white;
+    text-decoration: none;
+    }
+    .filter{
+      display:inline-flex;
+      margin:5px
+    }
+    body{
+        background-image: url(trainer-bg.jpg);
+    }
+    #music-player, #playlist {
+  margin-top: 10px;
+  padding: 10px;
+  border:   #130127;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.603);
+  color:white;
+  box-shadow
+}
+#audio-player{
+    width:250px;
+    height: 20px;
+}
+.controls button {
+  margin: 8px;
+  background-color: red;
+  color:white;
+  border-radius: 7px;
+  border:none;
+}
+.controls button:hover{
+  background-color: blueviolet;
+  transform: scale(1.5);
+  animation: ease-in-out;
+}
+.dropdown {
+  position:relative;
+  display: block;
+}
+.dropdown .dropbtn {
+  border: none;
+  color: gold;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  padding: 0  30px;
+  font-size:  12px;
+  width: 170px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-image: url(trainer-bg.jpg);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.8);
+  z-index: 1;
+  width: 20px;
+  font-size:11px;
+}
+.dropdown-content a {
+  float: none;
+  color: whitesmoke;
+  padding: 7px 8px;
+  text-decoration: none;
+  display: flex;
+  text-align: left;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  display: block;
+  
+}
+
+.dropdown-content a:hover{
+  background-color:rgb(8, 0, 7);
+  }
+.dropdown:hover .dropdown-content{
+  display:block
+}
+
+h1{
+  color:gold;
+}
+  </style>
+  <script>
+      function myFunction(){
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    window.onclick = function(event)
+    {
+      if 
+      (!event.target.matches('.dropbtn')){
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.lenth; i++){
+        var openDropdown = dropdowns[i];
+        if 
+        (openDropdown.classList.contains('show')){
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+
+const tracks = [
+  { title: "davido ft kante", url: "davidoftkante.mp3.mp3" },
+  { title: "Black sherif", url: "Black-Sherif-Kwaku-The-Traveller.mp3"},
+  { title: "Track 3", url: "davidoftkante.mp3.mp3" },
+  { title: "Track 1", url: "davidoftkante.mp3.mp3" },
+  { title: "Track 2", url: "Black-Sherif-Kwaku-The-Traveller.mp3"},
+  { title: "Track 3", url: "davidoftkante.mp3.mp3" },
+  { title: "Track 1", url: "davidoftkante.mp3.mp3" },
+  { title: "Track 2", url: "Black-Sherif-Kwaku-The-Traveller.mp3"},
+  { title: "Track 3", url: "davidoftkante.mp3.mp3" },
+  { title: "Track 1", url: "davidoftkante.mp3.mp3" },
+  { title: "Track 2", url: "Black-Sherif-Kwaku-The-Traveller.mp3"},
+  { title: "Track 3", url: "davidoftkante.mp3.mp3" },
+  { title: "Track 1", url: "davidoftkante.mp3.mp3" },
+  { title: "Track 2", url: "Black-Sherif-Kwaku-The-Traveller.mp3"},
+  { title: "Track 3", url: "davidoftkante.mp3.mp3" },
+  { title: "Track 1", url: "davidoftkante.mp3.mp3" },
+  { title: "Track 2", url: "Black-Sherif-Kwaku-The-Traveller.mp3"},
+  { title: "Track 3", url: "davidoftkante.mp3.mp3" },
+  
+];
+
+let currentTrackIndex = 0;
+const audio = document.getElementById("audio-player");
+const trackTitle = document.getElementById("current-track-title");
+
+function loadTrack(index) {
+  const track = tracks[index];
+  audio.src = track.url;
+  trackTitle.textContent = track.title;
+  document.getElementById("music-player").style.display = "block";
+}
+
+function togglePlay() {
+  if (audio.paused) {
+    audio.play();
+  } else {
+    audio.pause();
+  }
+}
+
+function playNext() {
+  currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
+  loadTrack(currentTrackIndex);
+  audio.play();
+}
+
+
+function playPrevious() {
+  currentTrackIndex = (currentTrackIndex - 1 + tracks.length) % tracks.length;
+  loadTrack(currentTrackIndex);
+  audio.play();
+}
+
+function togglePlaylist() {
+  const playlist = document.getElementById("playlist");
+  playlist.style.display = playlist.style.display === "none" ? "block" : "none";
+}
+
+function renderPlaylist() {
+  const list = document.getElementById("track-list");
+  tracks.forEach((track, index) => {
+    const li = document.createElement("li");
+    li.textContent = track.title;
+    li.onclick = () => {
+      currentTrackIndex = index;
+      loadTrack(index);
+      audio.play();
+    };
+    list.appendChild(li);
+  });
+}
+
+// Listen for end of audio and auto-play next track 
+audio.addEventListener( "ended", playNext);
+renderPlaylist();
+  </script>
+</body>
+</html>
+
+  

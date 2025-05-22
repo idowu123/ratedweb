@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Music Rating Site</title>
+  <style>
+    a {
+      text-decoration: none;
+    }
+    
+    #current-track-title{
+      color:red;
+    }
+    #now-playing{
+      color:yellow;
+    }
+    ul#track-list{
+      color:yellow;
+    }
+
+    audio#audio{
+      width:180px;
+    }
+
+    button.prev{
+      background-color: blue;
+    }
+
+    button.play{
+      background-color: red;
+    }
+
+    button.next{
+      background-color: rgb(29, 184, 55);
+    }
+     button.prev:hover{
+      background-color: #888;
+      transform:scale(0.9);
+     }
+
+     button.play:hover{
+      background-color: #888;
+      transform:scale(0.9);
+     }
+
+     button.next:hover{
+      background-color: #888;
+      transform:scale(0.9);
+     }
+
+     .youtube-button{
+      background-color: #740404;
+      width:250px;
+      color:white;
+     }
+     .facebook-button{
+      background-color: blue;
+      width:250px;
+      color:white;
+     }
+
+     .instagram-button{
+      background-colo: blue;
+      width:250px;
+      color:white;
+     }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      padding: 20px;
+      background-image: url(about_bg.jpg);
+      background-size: cover;
+      background-position:center ;
+    }
+    .next-rated{
+    color:#f5f0f0;
+    font-size: 40px;
+    text-shadow:0 0 15px #070606;
+    animation:slideInright;
+    animation-duration:1s;
+    animation-timing-function: ease-out;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight:800;
+    }
+    .download {
+      padding: 6px 12px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      text-decoration: none;
+      padding-bottom:5px;
+    }
+ 
+ nav{
+    color:white; 
+    
+ }
+
+ li{
+    text-decoration: none;
+ }
+ ul{
+    text-decoration: none;
+
+ }
+nav  a{
+    color:gold;
+    text-decoration: none;
+    display:flex;
+    height: 50px;
+    padding: 0  30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+ }
+ nav a:hover{
+color:#ffffff;
+ }
+ h1{
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color:white;
+    
+    animation:slideIntop;
+      animation-duration: 2s; 
+      animation-timing-function: ease-in-out;   
+      animation-delay: 0s;
+      animation-iteration-count: 1;
+      padding-left: 40px;
+        }
+ 
+ h2{
+  color:white;
+ }
+
+
+ 
+ .sky-d-p{
+    font-size: 18px;
+    animation:slideIntop;
+          animation-timeline:view();
+          animation-range:entry 0% cover 40%;
+        }
+ 
+nav ul{
+  list-style: none;
+  text-decoration: none;
+  display: contents;
+  align-items: right;
+  
+}
+nav li{
+  text-decoration: none;
+  margin-top: -15px;
+  font-size: 12px;
+}
+.login{
+  margin-left: 200px;
+}
+
+p{
+  color:whitesmoke;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+select{
+  background-image: url(trainer-bg.jpg);
+  color:white;
+}
+select:hover{
+  background-color: black;
+}
+button{
+background-color: #3498db;
+color:white;
+border: none;
+border-radius: 5px;
+height: 30px;
+
+} 
+button a{
+color:white;
+text-decoration: none;
+}
+button a:hover{
+  color:red;
+  
+}
+.dropdown {
+  float: left;
+  overflo: hidden;
+}
+.dropdown .dropbtn {
+  border: none;
+  color: gold;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  padding: 0  30px;
+  
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-image: url(trainer-bg.jpg);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.8);
+  z-index: 1;
+}
+.dropdown-content a {
+  float: none;
+  color: whitesmoke;
+  padding: 7px 8px;
+  text-decoration: none;
+  display: flex;
+  text-align: left;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.dropdown-content a:hover{
+  background-color:rgb(8, 0, 7);
+  }
+.dropdown:hover .dropdown-content{
+  display:block
+}
+.artist-dashboard{
+  color:#f8f8f6a1;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  animation-name: bounce;
+  animation-duration:2s;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+.sky-d-img{
+     padding-left: 50px;
+     animation:slideIntop;
+    animation-duration: 1s;
+    animation-delay: 0s;
+    animation-timing-function: ease-in; 
+       
+    }
+
+@keyframes bounce{
+          0% {
+            transform: translateY(0);
+          }
+          20%{
+            transform:translateY(0);
+          }
+          40%{
+            transform:translateY(-30PX);
+          }
+          50%{
+            transform:translateY(0);
+          }
+          60%{
+            transform:translateY(-15px);
+          }
+          80%{
+            transform:translateY(0);
+          }
+          100%{
+            transform:translateY(0);
+          }
+        }
+
+        @keyframes slideInbottom{
+          from{
+          transform: translateY(-300px);
+          }
+          to{
+          transform:translatY(0);
+          }  
+        }
+
+        @keyframes appear{
+        from {
+          opacity:0;
+          transform:trsanslateX(-100px);
+        }
+        to{
+          opacity:1;
+          transform:translate(0px);
+        }
+      }
+
+      @keyframes slideInleft{
+          from{
+          transform: translateX(-300px);
+          }
+          to{
+          transform:translatX(0);
+          }  
+        } 
+        @keyframes slideInright{
+          from{
+          transform: translateX(300px);
+          }
+          to{
+          transform:translatX(0);
+          }  
+        }
+        @keyframes slideIntop{
+          from{
+          transform: translateY(300px);
+          }
+          to{
+          transform:translatY(0);
+          }  
+        }
+        @keyframes spin{
+          0%{
+         
+          }
+          100%{
+          transform:rotate(360deg);
+          border-radius: 50%;
+          }  
+        }
+      
+       
+
+:root {
+  --bg: #222;
+  --fg: #fff;
+}
+
+.light-mode {
+  --bg: #fff;
+  --fg: #000;
+}
+
+.player {
+  max-width: 400px;
+  height: 110px;
+  margin: auto;
+  padding: 20px;
+  background: #444;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #000;
+ 
+}
+
+#playlist {
+  list-style: none;
+  padding: 0;
+  heigh:2px;
+  widt: 5px;
+}
+
+#playlist li {
+  cursor: pointer;
+  padding: 10px;
+  margin: 5px 0;
+  background: #666;
+  border-radius: 5px;
+}
+
+#playlist li:hover {
+  background: #888;
+}
+.tagline a{
+         color:rgba(255, 255, 255, 0.39);
+        }
+        .tagline a:hover{
+          color:aqua;
+          transform:scale(1.6);
+          transform:ease in out ease out;
+        }
+        audio{
+          width: 230px;
+          height: 20px;
+        }
+
+      
+
+  </style>
+ 
+</head>
+<body>
+    <nav>
+      <p class="artist-dashboard">ARTIST DASHBOARD</p>
+      <div class="login"><a href="login.html">LOGIN</a></div>
+     <hr>
+        <ul>
+          <img src="home.png" width="15px">  <li><a href="index.html">Home </a></li>
+           
+           
+           <img src="music-logo.png" width="15px">  <li><a href="musicplaylist.html">MUSIC PLAYLIST </a></li>
+          
+           
+            <img src="blog-icon.png" width="20px">  <li><a href="artistblog.html">ARTIST BLOG</a></li>    
+           <div class="dropdown">
+        </div>
+             </ul>
+        </nav>
+       <p class="next-rated"> NEXT RATED ARTIST</p>
+        
+    <div class="sky-d-img"><img src="davido.png" width="150px" height="150px"></div>
+    <h1>OLABAMI</h1><br>
+  <p class="sky-d-p">OLABAMI, born and raise in lagos state, in 2020 he sign to Debim Music Entertainment, he realese his single 
+    in april 2020 title "my love" which makes him get more fame, currently he has one music album which contains 
+    17 music. he is very young and talented. i hope you will enjoy his music playlist, download his music and kindly rate him.
+  </p><hr>
+  <p>For collaboration</p>
+ <center><button><a href="https://wa.me/7010067689">Message OLABAMI</a></button></center> <br><br>
+ <marquee><img src="id.jpg" width="200px"> 
+  <h1> Music Playlist</h1></marquee>
+
+  <div id="music-player" style="display: none;"  style="overflow-y:scroll;height:50px"  >
+    <div id="now-playing">Now Playing: <span id="current-track-title"></span></div>
+    <audio id="audio-player" controls autoplay></audio>
+    <div class="controls">
+      <button class="prev" onclick="playPrevious()">Prev</button>
+      <button class="play" onclick="togglePlay()">Play</button>
+      <button class="next" onclick="playNext()">Next</button>
+      <button onclick="toggleShuffle()">Shuffle</button>
+    </div>
+  </div>
+  <br>
+ <center> <button onclick="togglePlaylist()">Click To Show Playlist</button></center>
+  
+  <div id="playlist" style="display: none;">
+    <ul id="track-list"  style="overflow-y:scroll;height:200px">
+      <!-- Tracks will be added here -->
+     
+    </ul>
+  </div><br><br>
+ 
+ 
+   <p>Latest Hit From OLABAMI </p>
+   <div class="player">
+    <ul id="playlist">
+      <li data-src="davidoftkante.mp3.mp3">Davido ft fave-kante</li>
+      <audio id="audio" controls>
+        <source src="davidoftkante.mp3.mp3" type="audio/mp3" />
+        Your browser does not support the audio element.
+      </audio><br><br>
+      <center><a class="download" href="path-to-your-music/davidoftkante.mp3.mp3" download>Download</a></center><br>
+  </div><br>
+
+  <div class="player">
+    <ul id="playlist">
+      <li data-src="davidoftkante.mp3.mp3">Davido ft fave-kante</li>
+      <audio id="audio" controls>
+        <source src="davidoftkante.mp3.mp3" type="audio/mp3" />
+        Your browser does not support the audio element.
+      </audio><br><br>
+      <center><a class="download" href="path-to-your-music/davidoftkante.mp3.mp3" download>Download</a></center><br>
+  </div><br>
+
+  <div class="player">
+    <ul id="playlist">
+      <li data-src="davidoftkante.mp3.mp3">Davido ft fave-kante</li>
+      <audio id="audio" controls>
+        <source src="davidoftkante.mp3.mp3" type="audio/mp3" />
+        Your browser does not support the audio element.
+      </audio><br><br>
+      <center><a class="download" href="path-to-your-music/davidoftkante.mp3.mp3" download>Download</a></center><br>
+  </div><br>
+
+  <button class="facebook-button"><a href="facebook.com"><img src="fb.png" width="15px"> Follow RIDWAN on Facebook</a></button><br><br>
+  <button class="instagram-button"><a href="instagram.com"><img src="instagrampng.png" width="20px"> Follow RIDWAN on Instagram</a></button><br><br>
+  <button class="youtube-button"><a href="instagram.com"><img src="youtube.png" width="20px"> Follow RIDWAN on Youtube</a></button><br>
+
+  <center><p class="copyright"><img src="copyright.png" width="13px"> Noble Studio 2025, All Right Reserved.</p></center>
+ <center> <p class="tagline">Web Develop By <a href="https://noblestudio.netlify.com">Noble Studio Nigeria</a><br><br>
+<a href="terms&condition.html">Terms & Condition</a><br><br> <a href="aboutsite.html">About Site</a></p></center>
+
+  <script src="player.js"></script>
+  <script>
+     let isShuffle = false;
+     // List of music files
+ const playlist = [
+            'path/to/your/music1.mp3',
+            'path/to/your/music2.mp3',
+            'path/to/your/music3.mp3'
+        ];
+
+
+
+        
+
+
+      function myFunction(){
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    window.onclick = function(event)
+    {
+      if 
+      (!event.target.matches('.dropbtn')){
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.lenth; i++){
+        var openDropdown = dropdowns[i];
+        if 
+        (openDropdown.classList.contains('show')){
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+
+const tracks = [
+  { title: "davido ft kante", url: "davidoftkante.mp3.mp3" },
+  { title: "Black sherif", url: "Black-Sherif-Kwaku-The-Traveller.mp3"},
+  { title: "Track 3", url: "davidoftkante.mp3.mp3" },
+  { title: "Track 1", url: "davidoftkante.mp3.mp3" },
+  { title: "Track 2", url: "Black-Sherif-Kwaku-The-Traveller.mp3"},
+  { title: "Track 3", url: "davidoftkante.mp3.mp3" },
+  { title: "Track 1", url: "davidoftkante.mp3.mp3" },
+  { title: "Track 2", url: "Black-Sherif-Kwaku-The-Traveller.mp3"},
+  { title: "Track 3", url: "davidoftkante.mp3.mp3" },
+  { title: "Track 1", url: "davidoftkante.mp3.mp3" },
+  { title: "Track 2", url: "Black-Sherif-Kwaku-The-Traveller.mp3"},
+  { title: "Track 3", url: "davidoftkante.mp3.mp3" },
+  { title: "Track 1", url: "davidoftkante.mp3.mp3" },
+  { title: "Track 2", url: "Black-Sherif-Kwaku-The-Traveller.mp3"},
+  { title: "Track 3", url: "davidoftkante.mp3.mp3" },
+  { title: "Track 1", url: "davidoftkante.mp3.mp3" },
+  { title: "Track 2", url: "Black-Sherif-Kwaku-The-Traveller.mp3"},
+  { title: "Track 3", url: "davidoftkante.mp3.mp3" },
+  
+];
+
+let currentTrackIndex = 0;
+const audio = document.getElementById("audio-player");
+const trackTitle = document.getElementById("current-track-title");
+
+function loadTrack(index) {
+  const track = tracks[index];
+  audio.src = track.url;
+  trackTitle.textContent = track.title;
+  document.getElementById("music-player").style.display = "block";
+}
+
+
+
+function togglePlay() {
+  if (audio.paused) {
+    audio.play();
+  } else {
+    audio.pause();
+  }
+}
+
+function playNext() {
+  currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
+  loadTrack(currentTrackIndex);
+  audio.play();
+}
+
+function playNext() {
+  if (isShuffle) {
+    let nextIndex;
+    do {
+      nextIndex = Math.floor(Math.random() * tracks.length);
+    } while (nextIndex === currentTrackIndex && tracks.length > 1); // Avoid same track
+
+    currentTrackIndex = nextIndex;
+  } else {
+    currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
+  }
+
+  loadTrack(currentTrackIndex);
+  audio.play();
+}
+
+
+function toggleShuffle() {
+  isShuffle = !isShuffle;
+  alert("You " + (isShuffle ? " Enabled Shuffle" : "  Disabled Shuffle"));
+}
+
+function playPrevious() {
+  currentTrackIndex = (currentTrackIndex - 1 + tracks.length) % tracks.length;
+  loadTrack(currentTrackIndex);
+  audio.play();
+}
+
+function togglePlaylist() {
+  const playlist = document.getElementById("playlist");
+  playlist.style.display = playlist.style.display === "none" ? "block" : "none";
+}
+
+function renderPlaylist() {
+  const list = document.getElementById("track-list");
+  tracks.forEach((track, index) => {
+    const li = document.createElement("li");
+    li.textContent = track.title;
+    li.onclick = () => {
+      currentTrackIndex = index;
+      loadTrack(index);
+      audio.play();
+    };
+    list.appendChild(li);
+  });
+}
+
+// Listen for end of audio and auto-play next track 
+audio.addEventListener( "ended", playNext);
+
+//Initialize playlist
+renderPlaylist();
+
+
+
+  </script>
+</body>
+</html>
